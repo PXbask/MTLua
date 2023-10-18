@@ -24,6 +24,7 @@ namespace MT.Event
         bool CanMove();
         UnityEngine.GameObject GetGameObject();
         string GetAssetName();
+        int GetItemID();
     }
 
     /// <summary>

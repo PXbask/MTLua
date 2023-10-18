@@ -27,10 +27,10 @@ public class EventObjectManager : MonoBehaviour
     internal MT.Event.IEventBasic GetEventObject(int eoid)
     {
         var data = MT.Managers.DataManager.Instance.GetEOData(eoid);
-        return GetEventObject(data.AssetName, data.Group, data.LuaName);
+        return GetEventObject(data.AssetName, data.Group, data.LuaName, eoid);
     }
 
-    private MT.Event.IEventBasic GetEventObject(string eoName, string grouptag, string luaName)
+    private MT.Event.IEventBasic GetEventObject(string eoName, string grouptag, string luaName, int id)
     {
         GameObject obj = null;
         string eopath = PathUtil.GetEOPath(eoName);
@@ -45,6 +45,7 @@ public class EventObjectManager : MonoBehaviour
             obj = Instantiate(objc) as GameObject;
             EventObjectLogic ieb = obj.GetComponent<EventObjectLogic>();
             ieb.assetName = eopath;
+            ieb.id = id;
             ieb.Init(luaName);
         });
         return obj.GetComponent<MT.Event.IEventBasic>();

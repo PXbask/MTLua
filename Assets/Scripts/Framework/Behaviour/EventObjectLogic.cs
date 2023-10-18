@@ -29,6 +29,7 @@ public class EventObjectLogic : LuaBehaviour, MT.Event.IEventBasic
     private Action afterOpenDoor = null;
     #endregion
 
+    public int id;
     public string assetName;
     public Animator animator;
     public SpriteRenderer render;
@@ -185,4 +186,6 @@ public class EventObjectLogic : LuaBehaviour, MT.Event.IEventBasic
     #endregion
 
     public string GetAssetName() => this.assetName;
+
+    public int GetItemID() => this.id;
 }

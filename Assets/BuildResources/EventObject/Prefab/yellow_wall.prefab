@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1998077906173889359}
   - component: {fileID: 4514277483483333032}
+  - component: {fileID: 7024355589463144475}
+  - component: {fileID: 5380828594828269828}
   m_Layer: 0
   m_Name: yellow_wall
   m_TagString: Untagged
@@ -84,3 +86,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7024355589463144475
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566591153512503271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5380828594828269828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566591153512503271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e5a765a57a4ef14794644d81dd42bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LuaName: 
+  id: 0
+  assetName: 
+  animator: {fileID: 0}
+  render: {fileID: 0}

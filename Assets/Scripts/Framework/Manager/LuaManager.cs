@@ -26,6 +26,8 @@ public class LuaManager : MonoBehaviour
         else
 #endif
             this.LoadLuaScript();
+
+        Manager.Event.Fire((int)GameEvent.OnLuaInit);
     }
     public byte[] Loader(ref string luaName)
     {

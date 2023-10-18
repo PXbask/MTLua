@@ -27,7 +27,7 @@ namespace MT.Mono
         public BlockSlot SetPos(Vector2Int pos)
         {
             this.blockPos = pos;
-            this.transform.position = new Vector3(pos.x + 0.5f, pos.y + 0.5f, 0);
+            this.transform.position = MT.Util.UnityUtil.GetTPosition(pos);
             return this;
         }
 

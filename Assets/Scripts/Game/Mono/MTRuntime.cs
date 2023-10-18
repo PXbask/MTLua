@@ -13,7 +13,7 @@ public class MTRuntime : MonoBehaviour
 
     private int curLevel;
     private MT.Data.StageData stageData;
-    private Vector2Int playerPos = Vector2Int.zero;
+    private Vector2Int playerPos = new Vector2Int(6,11);
 
     private int Scale => stageData.Scale;
     public PlayerLogic Player => player;
@@ -110,17 +110,17 @@ public class MTRuntime : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Vector2Int _tmp = targetPos;
-            if (!CanMove(_tmp.x, _tmp.y + 1, out damage))
+            if (!CanMove(_tmp.x, _tmp.y - 1, out damage))
                 return new ExpectData() { lastpos = _tmp, expos = _tmp, exdamage = 0 };
-            targetPos = _tmp + Vector2Int.up;
+            targetPos = _tmp + Vector2Int.down;
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             Vector2Int _tmp = targetPos;
-            if (!CanMove(_tmp.x, _tmp.y - 1, out damage))
+            if (!CanMove(_tmp.x, _tmp.y + 1, out damage))
                 return new ExpectData() { lastpos = _tmp, expos = _tmp, exdamage = 0 };
-            targetPos = _tmp + Vector2Int.down;
+            targetPos = _tmp + Vector2Int.up;
         }
 
         return new ExpectData() { lastpos = this.playerPos, expos = targetPos, exdamage = damage };

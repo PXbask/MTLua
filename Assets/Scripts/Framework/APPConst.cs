@@ -13,6 +13,7 @@ public enum GameEvent
 {
     GameInit = 10000,
     StartLua, 
+    OnLuaInit,
 }
 public class APPConst
 {

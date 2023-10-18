@@ -9,9 +9,9 @@ public class PlayerLogic : LuaBehaviour, MT.Event.IBattleable
     private Action<Vector2Int> onPositionChanged = null;
     private Action<int> onHurt = null;
     //TODO: from file
-    int curhp = 100;
-    int curatk = 100;
-    int curdef = 100;
+    int curhp = 1000;
+    int curatk = 10;
+    int curdef = 10;
 
     public int Curhp { get => curhp; set => curhp = value; }
     public int Curatk { get => curatk; set => curatk = value; }
@@ -79,6 +79,8 @@ public class PlayerLogic : LuaBehaviour, MT.Event.IBattleable
         Curhp -= da;
         onHurt?.Invoke(da);
     }
+
+    public int GetItemID() => -100;
     #endregion
 
 }

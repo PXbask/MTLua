@@ -1,4 +1,4 @@
-local Core = MT.Util.LuaUtil
+local Core = CS.MT.Util.LuaUtil
 
 function beforeGetItem()
     
@@ -9,7 +9,7 @@ function afterGetItem()
 end
 
 function getEffectAtOnce()
-    return false
+    return true
 end
 
 function onUseItem()

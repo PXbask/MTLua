@@ -1,14 +1,121 @@
 {
   "0": {
     "ID": 0,
-    "Name": "empty",
+    "Name": "置空",
+    "AssetName": "empty",
     "Group": "Empty",
-    "LuaName": "eoempty.empty"
+    "LuaName": "eo.eoempty.empty"
   },
   "1": {
     "ID": 1,
-    "Name": "slime_green",
+    "Name": "绿史莱姆",
+    "AssetName": "slime_green",
     "Group": "Enemy",
-    "LuaName": "enemy.slime_green"
+    "LuaName": "eo.enemy.slime_green"
+  },
+  "2": {
+    "ID": 2,
+    "Name": "小蝙蝠",
+    "AssetName": "small_bat",
+    "Group": "Enemy",
+    "LuaName": "eo.enemy.small_bat"
+  },
+  "3": {
+    "ID": 3,
+    "Name": "骷髅人",
+    "AssetName": "skeleton",
+    "Group": "Enemy",
+    "LuaName": "eo.enemy.skeleton"
+  },
+  "4": {
+    "ID": 4,
+    "Name": "骷髅士兵",
+    "AssetName": "skeleton_soldier",
+    "Group": "Enemy",
+    "LuaName": "eo.enemy.skeleton_soldier"
+  },
+  "5": {
+    "ID": 5,
+    "Name": "初级法师",
+    "AssetName": "junior_mage",
+    "Group": "Enemy",
+    "LuaName": "eo.enemy.junior_mage"
+  },
+  "201": {
+    "ID": 201,
+    "Name": "黄钥匙",
+    "AssetName": "yellow_key",
+    "Group": "Item",
+    "LuaName": "eo.item.yellow_key"
+  },
+  "202": {
+    "ID": 202,
+    "Name": "红血瓶",
+    "AssetName": "red_potion",
+    "Group": "Item",
+    "LuaName": "eo.item.red_potion"
+  },
+  "203": {
+    "ID": 203,
+    "Name": "蓝血瓶",
+    "AssetName": "blue_potion",
+    "Group": "Item",
+    "LuaName": "eo.item.blue_potion"
+  },
+  "204": {
+    "ID": 204,
+    "Name": "红宝石",
+    "AssetName": "red_gem",
+    "Group": "Item",
+    "LuaName": "eo.item.red_gem"
+  },
+  "205": {
+    "ID": 205,
+    "Name": "蓝宝石",
+    "AssetName": "blue_gem",
+    "Group": "Item",
+    "LuaName": "eo.item.blue_gem"
+  },
+  "206": {
+    "ID": 206,
+    "Name": "红钥匙",
+    "AssetName": "red_key",
+    "Group": "Item",
+    "LuaName": "eo.item.red_key"
+  },
+  "1001": {
+    "ID": 1001,
+    "Name": "黄门",
+    "AssetName": "yellow_door",
+    "Group": "Door",
+    "LuaName": "eo.door.yellow_door"
+  },
+  "1002": {
+    "ID": 1002,
+    "Name": "红门",
+    "AssetName": "red_door",
+    "Group": "Door",
+    "LuaName": "eo.door.red_door"
+  },
+  "1010": {
+    "ID": 1010,
+    "Name": "黄墙",
+    "AssetName": "yellow_wall",
+    "Group": "Door",
+    "LuaName": "eo.door.yellow_wall"
+  },
+  "2001": {
+    "ID": 2001,
+    "Name": "楼梯(上)",
+    "AssetName": "stair_up",
+    "Group": "Stair",
+    "LuaName": "eo.stair.stair_up"
+  },
+  "2002": {
+    "ID": 2002,
+    "Name": "楼梯(下)",
+    "AssetName": "stair_down",
+    "Group": "Stair",
+    "LuaName": "eo.stair.stair_down"
   }
 }

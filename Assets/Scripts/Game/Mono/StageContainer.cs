@@ -157,22 +157,6 @@ namespace MT.Mono
                 {
                     target.OnOverlay();
                 }
-                //if (target.Belong(Event.EventObjectType.Stair))
-                //{
-                    
-                //}
-                //if (target.Belong(Event.EventObjectType.Enemy))
-                //{
-                    
-                //}
-                //if (target.Belong(Event.EventObjectType.Item))
-                //{
-
-                //}
-                //if (target.Belong(Event.EventObjectType.Door))
-                //{
-                    
-                //}
             }
             catch (Exception e)
             {

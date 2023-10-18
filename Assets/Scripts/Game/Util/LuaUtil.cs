@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MT.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace MT.Util
         public static class Player
         {
             private static readonly PlayerLogic ins = MTRuntime.instance.Player;
+            private static readonly ItemManager bag = MT.Managers.ItemManager.Instance;
             public static void Dohurt(int hurt)
             {
                 ins.OnHurt(hurt);
@@ -30,6 +32,8 @@ namespace MT.Util
             {
                 ins.Curdef = v;
             }
+            public static bool HasItem(int eid) => bag.HasItem(eid);
+            public static void UseItem(int eid) => bag.UseItem(eid);
         }
     }
 }

@@ -38,5 +38,6 @@ namespace MT.Managers
         internal EOData GetEOData(int id) => this.eoDatas[id];
 
         internal Dictionary<int, StageData> GetAllStageDatas() => this.stageDatas;
+        internal Dictionary<int, EOData> GetAllEODatas() => this.eoDatas;
     }
 }

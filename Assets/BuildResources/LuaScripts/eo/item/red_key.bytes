@@ -1,3 +1,5 @@
+local Core = CS.MT.Util.LuaUtil
+
 function beforeGetItem()
     
 end
@@ -15,7 +17,7 @@ function onUseItem()
 end
 
 function getCanMove()
-    return true
+    return true 
 end
 
 function getEntityType()

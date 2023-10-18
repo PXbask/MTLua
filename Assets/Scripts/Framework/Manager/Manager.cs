@@ -78,5 +78,6 @@ public class Manager : MonoBehaviour
 
 		MT.Managers.DataManager.Instance.Init();
         MT.Managers.MapManager.Instance.Init();
+        MT.Managers.ItemManager.Instance.Init();
     }
 }
