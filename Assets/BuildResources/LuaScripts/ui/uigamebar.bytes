@@ -1,0 +1,30 @@
+local Core = CS.MT.Util.LuaUtil
+
+local txtHp = null;
+local txtAtk = null;
+local txtDef = null;
+
+function OnInit()
+    txtHp = self.transform:Find('lftbar'):Find('hp'):GetComponent('Text')
+    txtAtk = self.transform:Find('lftbar'):Find('atk'):GetComponent('Text')
+    txtDef = self.transform:Find('lftbar'):Find('def'):GetComponent('Text')
+end
+
+function Update()
+    local data = Core.GetRuntimeData()
+    txtHp.text = 'HP:' .. data.playerhp
+    txtAtk.text = 'ATK:' .. data.playeratk
+    txtDef.text = 'DEF:' .. data.playerdef
+end
+
+function OnDestroy()
+    
+end
+
+function OnOpen()
+
+end
+
+function OnClose()
+    
+end

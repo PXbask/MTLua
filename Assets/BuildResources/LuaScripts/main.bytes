@@ -1,0 +1,9 @@
+UIManager = CS.Manager.UI
+EOManager = CS.Manager.EO
+SceneManager = CS.Manager.Scene
+
+function main()
+    SceneManager:ChangeScene('Menu','scene.menu')
+end
+
+main();

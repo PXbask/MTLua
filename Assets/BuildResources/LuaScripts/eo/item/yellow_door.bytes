@@ -1,0 +1,15 @@
+function beforeOpenDoor()
+    
+end
+
+function afterOpenDoor()
+    
+end
+
+function getCanMove()
+    return true
+end
+
+function getEntityType()
+    return 1 << 4
+end

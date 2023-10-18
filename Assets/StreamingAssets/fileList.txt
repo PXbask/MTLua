@@ -1,0 +1,3 @@
+Assets/BuildResources/LuaScripts/main.bytes|luascripts\main.bytes.ab
+Assets/BuildResources/LuaScripts/ui/uimaintitle.bytes|luascripts\ui\uimaintitle.bytes.ab
+Assets/BuildResources/UI/Prefab/UIMainTitle.prefab|ui\prefab\uimaintitle.prefab.ab

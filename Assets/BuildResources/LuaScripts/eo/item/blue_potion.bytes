@@ -1,0 +1,26 @@
+local Core = MT.Util.LuaUtil
+
+function beforeGetItem()
+    
+end
+
+function afterGetItem()
+    
+end
+
+function getEffectAtOnce()
+    return false
+end
+
+function onUseItem()
+    local hp = Core.GetRuntimeData().playerhp
+    Core.Player.Sethp(hp + 200)
+end
+
+function getCanMove()
+    return true
+end
+
+function getEntityType()
+    return 1 << 3
+end

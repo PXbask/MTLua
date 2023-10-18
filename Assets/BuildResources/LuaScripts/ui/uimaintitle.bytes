@@ -1,0 +1,33 @@
+local btnGameStart = null;
+local btnQuit = null;
+
+function OnInit()
+    btnGameStart = self.transform:Find('bg'):Find('btn_group'):Find('startgame'):GetComponent('Button')
+    btnQuit = self.transform:Find('bg'):Find('btn_group'):Find('quit'):GetComponent('Button')
+end
+
+function Update()
+    
+end
+
+function OnDestroy()
+    
+end
+
+function OnOpen()
+    btnGameStart:OnClickSet(
+        function()
+            print('enter game...')
+            CS.Manager.Scene:ChangeScene('Game', 'scene.game')
+        end
+    )
+    btnQuit:OnClickSet(
+        function()
+            print('quit game...')
+        end
+    )
+end
+
+function OnClose()
+    
+end

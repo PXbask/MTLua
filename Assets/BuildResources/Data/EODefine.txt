@@ -1,0 +1,14 @@
+{
+  "0": {
+    "ID": 0,
+    "Name": "empty",
+    "Group": "Empty",
+    "LuaName": "eoempty.empty"
+  },
+  "1": {
+    "ID": 1,
+    "Name": "slime_green",
+    "Group": "Enemy",
+    "LuaName": "enemy.slime_green"
+  }
+}

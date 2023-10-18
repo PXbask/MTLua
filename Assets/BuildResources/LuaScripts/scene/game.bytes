@@ -1,0 +1,15 @@
+function OnActive()
+
+end
+
+function OnInActive()
+
+end
+
+function OnEnter()
+    UIManager:OpenUI('UIGameBar',20,'ui.uigamebar')
+end
+
+function OnQuit()
+    UIManager:CloseUI('UIGameBar')
+end

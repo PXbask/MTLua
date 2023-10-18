@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 2897370006
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: luascripts/main.bytes.ab
+      Dependencies: {}
+    Info_1:
+      Name: luascripts/ui/uimaintitle.bytes.ab
+      Dependencies: {}
+    Info_2:
+      Name: ui/prefab/uimaintitle.prefab.ab
+      Dependencies: {}

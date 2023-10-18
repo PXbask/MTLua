@@ -1,0 +1,15 @@
+function OnActive()
+
+end
+
+function OnInActive()
+
+end
+
+function OnEnter()
+    UIManager:OpenUI('UIMainTitle',15,'ui.uimaintitle')
+end
+
+function OnQuit()
+    UIManager:CloseUI('UIMainTitle')
+end

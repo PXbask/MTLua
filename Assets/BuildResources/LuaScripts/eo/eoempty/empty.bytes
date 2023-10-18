@@ -1,0 +1,20 @@
+
+function OnbeforeOverlay()
+
+end
+
+function OnOverlay()
+
+end
+
+function OnafterOverlay()
+    
+end
+
+function getCanMove()
+    return true
+end
+
+function getEntityType()
+    return 1 << 0
+end
