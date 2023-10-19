@@ -12,6 +12,7 @@ namespace MT.Managers
     {
         private Dictionary<int, StageData> stageDatas = null;
         private Dictionary<int, EOData> eoDatas = null;
+        private Dictionary<int, TextureMapData> texturemapDatas = null;
         public DataManager() { }
         public void Init()
         {
@@ -31,11 +32,19 @@ namespace MT.Managers
                 string json = (obj as UnityEngine.TextAsset).text;
                 this.eoDatas = JsonConvert.DeserializeObject<Dictionary<int, EOData>>(json);
             });
+
+            Manager.Resources.LoadData("TextureMapDefine", (UnityEngine.Object obj) =>
+            {
+                string json = (obj as UnityEngine.TextAsset).text;
+                this.texturemapDatas = JsonConvert.DeserializeObject<Dictionary<int, TextureMapData>>(json);
+            });
         }
 
         internal StageData GetStageData(int level) => this.stageDatas[level];
 
         internal EOData GetEOData(int id) => this.eoDatas[id];
+
+        internal TextureMapData GetTMData(int id) => this.texturemapDatas[id];
 
         internal Dictionary<int, StageData> GetAllStageDatas() => this.stageDatas;
         internal Dictionary<int, EOData> GetAllEODatas() => this.eoDatas;

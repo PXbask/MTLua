@@ -48,5 +48,7 @@ namespace MT.Mono
             this.event_animator = obj.GetComponent<Animator>();
             this.eventlogic = obj.GetComponent<EventObjectLogic>();
         }
+
+        internal void ResetBackGround(Sprite v) => this.bg_render.sprite = v;
     }
 }

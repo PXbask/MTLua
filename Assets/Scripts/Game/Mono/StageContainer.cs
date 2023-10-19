@@ -56,7 +56,6 @@ namespace MT.Mono
             this.level = level;
 
             this.map = Managers.MapManager.Instance.GetMapData(level);
-            //this.map.EnterLevel();
             res = map.StageData;
             this.stageData = res;
 
@@ -73,6 +72,8 @@ namespace MT.Mono
         private void RefreshBlockSlots()
         {
             this.map.LoadEventBlock(ref this.slots);
+            this.map.LoadBackBlock(ref this.slots);
+            this.map.LoadForeBlock(ref this.slots);
         }
 
 #if UNITY_EDITOR_64

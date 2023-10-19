@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1877735683, guid: 523e2b16be1fcdd4fbf65b31b5da567b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50da77ff6eaaaca41850614ad98e82d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LuaName: 
+  id: 0
   assetName: 
   animator: {fileID: 0}
   render: {fileID: 0}

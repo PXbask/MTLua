@@ -65,4 +65,30 @@ public class BuildTool : MonoBehaviour
         result = files.Where(file => !file.EndsWith(".cs") && !file.Equals(path)).ToList();
         return result;
     }
+
+    [MenuItem("Tools/ExportSprite")]
+    private static void ExportSprite()
+    {
+        string resourcesPath = Path.Combine(PathUtil.AssetsPath, "Resources/Sprite");
+        var files = Directory.GetFiles(resourcesPath);
+        foreach (var path in files)
+        {
+            if (path.EndsWith(".meta")) continue;
+            string tarstr = path.Substring(path.LastIndexOf("Sprite"));
+            tarstr = tarstr.Remove(tarstr.IndexOf('.'));
+            Sprite[] spriteList = Resources.LoadAll<Sprite>(tarstr);
+            if (spriteList.Length > 0)
+            {
+                string outPath = Application.dataPath + "/BuildResources/Sprite";
+                foreach (var sprite in spriteList)
+                {
+                    Texture2D tex = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
+                    tex.SetPixels(sprite.texture.GetPixels((int)sprite.rect.xMin, (int)sprite.rect.yMin, (int)sprite.rect.width, (int)sprite.rect.height));
+                    tex.Apply();
+                    System.IO.File.WriteAllBytes(outPath + "/" + sprite.name + ".png", tex.EncodeToPNG());
+                    Debug.Log("SaveSprite to" + outPath);
+                }
+            }
+        }
+    }
 }

@@ -54,7 +54,7 @@ public class ResourcesManager : MonoBehaviour
             }
         }
     }
-    IEnumerator LoadBundleAsync(string assetName,Action<UObject> callback = null)
+    IEnumerator LoadBundleAsync<T>(string assetName,Action<T> callback = null) where T : class
     {
         string bundleName = BundleInfos[assetName].BundleName;
         string bundlePath = Path.Combine(PathUtil.BundleResourcesOutPath, bundleName);
@@ -81,12 +81,12 @@ public class ResourcesManager : MonoBehaviour
         {
             foreach (var dep in dependence)
             {
-                yield return LoadBundleAsync(dep);
+                yield return LoadBundleAsync<T>(dep);
             }
         }
         if (assetName.EndsWith(".unity"))
         {
-            callback?.Invoke(null);
+            callback?.Invoke(default(T));
             yield break;
         }
         if (callback == null)
@@ -96,7 +96,7 @@ public class ResourcesManager : MonoBehaviour
         AssetBundleRequest bundleRequest = bundle.Bundle.LoadAssetAsync(assetName);
         yield return bundleRequest;
 
-        callback?.Invoke(bundleRequest?.asset);
+        callback?.Invoke(bundleRequest?.asset as T);
     }
     BundleData GetBundleData(string assetName)
     {
@@ -141,9 +141,9 @@ public class ResourcesManager : MonoBehaviour
         }
     }
 #if UNITY_EDITOR
-    private void EditorLoadAsset(string assetName, Action<UObject> callback = null)
+    private void EditorLoadAsset<T>(string assetName, Action<T> callback = null) where T : UnityEngine.Object
     {
-        UObject obj = UnityEditor.AssetDatabase.LoadAssetAtPath<UObject>(assetName);
+        T obj = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetName);
         if (obj == null) Debug.LogErrorFormat("asset:{0} do not found", assetName);
         callback?.Invoke(obj);
     }
@@ -155,55 +155,59 @@ public class ResourcesManager : MonoBehaviour
     /// <param name="assetName"></param>
     /// <param name="callback"></param>
     /// <returns></returns>
-    private void LoadAsset(string assetName, Action<UObject> callback = null)
+    private void LoadAsset<T>(string assetName, Action<T> callback = null) where T : UnityEngine.Object
     {
         Debug.Log("LoadAsset");
 #if UNITY_EDITOR
         if(APPConst.GameMode==GameMode.EditorMode)
-            EditorLoadAsset(assetName, callback);
+            EditorLoadAsset<T>(assetName, callback);
         else
 #endif
-            StartCoroutine(LoadBundleAsync(assetName, callback));
+            StartCoroutine(LoadBundleAsync<T>(assetName, callback));
     }
     public void LoadUI(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetUIPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetUIPath(assetName), callback);
     }
     public void LoadData(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetDataPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetDataPath(assetName), callback);
     }
     public void LoadEventObject(string assetName, Action<UObject> callback)
     {
-        LoadAsset(PathUtil.GetEOPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetEOPath(assetName), callback);
     }
     public void LoadMusic(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetMusicPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetMusicPath(assetName), callback);
     }
     public void LoadSound(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetSoundPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetSoundPath(assetName), callback);
     }
     public void LoadModel(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetModelPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetModelPath(assetName), callback);
     }
     public void LoadEffect(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetEffectPath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetEffectPath(assetName), callback);
     }
     public void LoadScene(string assetName, Action<UObject> callback = null)
     {
-        LoadAsset(PathUtil.GetScenePath(assetName), callback);
+        LoadAsset<UObject>(PathUtil.GetScenePath(assetName), callback);
+    }
+    public void LoadSprite(string assetName, Action<Sprite> callback = null)
+    {
+        LoadAsset<Sprite>(PathUtil.GetSpritePath(assetName), callback);
     }
     public void LoadLua(string name, Action<UObject> callback)
     {
-        LoadAsset(name, callback);
+        LoadAsset<UObject>(name, callback);
     }
     public void LoadPrefab(string name, Action<UObject> callback)
     {
-        LoadAsset(name, callback);
+        LoadAsset<UObject>(name, callback);
     }
 
     #endregion

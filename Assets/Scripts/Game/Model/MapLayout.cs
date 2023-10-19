@@ -2,10 +2,13 @@ using MT.Data;
 using MT.Event;
 using MT.Managers;
 using MT.Mono;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
+using static UnityEditor.PlayerSettings;
 
 namespace MT.Model
 {
@@ -99,15 +102,32 @@ namespace MT.Model
                     //event
                     IEventBasic eo = Manager.EO.GetEventObject(this.eventgroundLayer[j, i]);
                     target.ResetEventObject(eo.GetGameObject());
-                    //bg
-
-                    //fore
-
                     eos.Add(eo);
                 }
             }
 
             this.eventLayer.ReLoad(eos.ToArray());
+        }
+
+        internal void LoadBackBlock(ref BlockSlot[,] slots)
+        {
+            for (int i = 0; i < slots.GetLength(0); i++)
+            {
+                for (int j = 0; j < slots.GetLength(1); j++)
+                {
+                    BlockSlot target = slots[j, i];
+                    var data = DataManager.Instance.GetTMData(this.backgroundLayer[j, i]);
+                    Manager.Resources.LoadSprite(data.AssetName, (Sprite obj) =>
+                    {
+                        target.ResetBackGround(obj);
+                    });
+                }
+            }
+        }
+
+        internal void LoadForeBlock(ref BlockSlot[,] slots)
+        {
+
         }
 
         internal IEventBasic GetEventObject(int x, int y) => this.eventLayer[x, y];
