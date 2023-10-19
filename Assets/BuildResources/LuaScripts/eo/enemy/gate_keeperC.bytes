@@ -1,0 +1,41 @@
+Log = CS.UnityEngine.Debug.Log
+local Core = CS.MT.Util.LuaUtil
+
+local hp = 100
+local atk = 180
+local def = 110
+local canbattle = true
+local canMove = true
+local typecode = 1 << 2
+
+function getHp()
+    return hp
+end
+
+function getAtk()
+    return atk
+end
+
+function getDef()
+    return def
+end
+
+function getCanBattle()
+    return canbattle
+end
+
+function beforeBattle()
+    
+end
+
+function afterBattle()
+    
+end
+
+function getCanMove()
+    return canMove
+end
+
+function getEntityType()
+    return typecode
+end

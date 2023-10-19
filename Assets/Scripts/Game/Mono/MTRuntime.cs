@@ -13,7 +13,7 @@ public class MTRuntime : MonoBehaviour
 
     private int curLevel;
     private MT.Data.StageData stageData;
-    private Vector2Int playerPos = new Vector2Int(6,11);
+    private Vector2Int playerPos = new Vector2Int(1,1);
 
     private int Scale => stageData.Scale;
     public PlayerLogic Player => player;
@@ -37,7 +37,7 @@ public class MTRuntime : MonoBehaviour
         this.stageContainer.Init();
         this.bag.Init();
 
-        this.curLevel = 1; //TODO:from file
+        this.curLevel = 2; //TODO:from file
         this.stageData = null;
         LoadLevel(this.curLevel, out this.stageData);
     }

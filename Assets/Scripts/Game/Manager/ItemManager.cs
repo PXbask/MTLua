@@ -46,12 +46,15 @@ namespace MT.Managers
 
             foreach (var item in DataManager.Instance.GetAllEODatas())
             {
-                Action onUse = null;
+                Action onUse;
                 env.DoString(Manager.Lua.GetLuaScript(item.Value.LuaName), item.Value.LuaName, scriptEnv);
                 scriptEnv.Get("onUseItem", out onUse);
                 if (onUse != null)
                     this.itemOrigins.Add(item.Key, new Model.Item(item.Value).SetAbility(onUse));
             }
+
+            scriptEnv?.Dispose();
+            scriptEnv = null;
         }
 
         internal bool HasItem(MT.Event.IEventBasic item) => this.itemCounts.ContainsKey(item.GetItemID()) && this.itemCounts[item.GetItemID()] > 0;

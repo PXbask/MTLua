@@ -41,6 +41,13 @@
     "Group": "Enemy",
     "LuaName": "eo.enemy.junior_mage"
   },
+  "6": {
+    "ID": 6,
+    "Name": "初级卫兵",
+    "AssetName": "gate_keeperC",
+    "Group": "Enemy",
+    "LuaName": "eo.enemy.gate_keeperC"
+  },
   "201": {
     "ID": 201,
     "Name": "黄钥匙",
@@ -83,6 +90,13 @@
     "Group": "Item",
     "LuaName": "eo.item.red_key"
   },
+  "207": {
+    "ID": 207,
+    "Name": "蓝钥匙",
+    "AssetName": "blue_key",
+    "Group": "Item",
+    "LuaName": "eo.item.blue_key"
+  },
   "1001": {
     "ID": 1001,
     "Name": "黄门",
@@ -96,6 +110,20 @@
     "AssetName": "red_door",
     "Group": "Door",
     "LuaName": "eo.door.red_door"
+  },
+  "1003": {
+    "ID": 1003,
+    "Name": "蓝门",
+    "AssetName": "blue_door",
+    "Group": "Door",
+    "LuaName": "eo.door.blue_door"
+  },
+  "1004": {
+    "ID": 1004,
+    "Name": "铁门",
+    "AssetName": "iron_door",
+    "Group": "Door",
+    "LuaName": "eo.door.iron_door"
   },
   "1010": {
     "ID": 1010,

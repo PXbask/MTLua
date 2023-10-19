@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System.Linq;
+using UnityEngine.Tilemaps;
+
 public class BuildTool : MonoBehaviour
 {
     [MenuItem("Tools/Build Bundle/Windows")]
@@ -90,5 +92,13 @@ public class BuildTool : MonoBehaviour
                 }
             }
         }
+    }
+
+    [MenuItem("Tools/ExportCurStageData")]
+    private static void ExportStageData()
+    {
+        UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Scenes/LevelEditor.unity", UnityEditor.SceneManagement.OpenSceneMode.Single);
+        MT.Editor.MTEditor.instance.ExportConfig();
+        EditorUtility.DisplayDialog("", "当前楼层数据导出完成!", "确定");
     }
 }

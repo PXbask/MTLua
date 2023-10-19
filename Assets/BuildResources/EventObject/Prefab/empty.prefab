@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LuaName: 
+  id: 0
   assetName: 
   animator: {fileID: 0}
   render: {fileID: 0}

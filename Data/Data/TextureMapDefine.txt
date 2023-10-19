@@ -1,8 +1,7 @@
 {
-  "1": {
-    "ID": 1,
+  "10001": {
+    "ID": 10001,
     "Name": "石头地板",
-    "AssetName": "terrains_0.png",
-    "Atlas": "terrains.png"
+    "AssetName": "terrains_0.png"
   }
 }

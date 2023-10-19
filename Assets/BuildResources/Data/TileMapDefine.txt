@@ -1,0 +1,112 @@
+{
+  "empty": {
+    "ID": "empty",
+    "Name": "置空",
+    "IntMap": 0
+  },
+  "enemys_0": {
+    "ID": "slime_green",
+    "Name": "绿史莱姆",
+    "IntMap": 1
+  },
+  "enemys_8": {
+    "ID": "small_bat",
+    "Name": "小蝙蝠",
+    "IntMap": 2
+  },
+  "enemys_16": {
+    "ID": "skeleton",
+    "Name": "骷髅人",
+    "IntMap": 3
+  },
+  "enemys_18": {
+    "ID": "skeleton_soldier",
+    "Name": "骷髅士兵",
+    "IntMap": 4
+  },
+  "enemys_32": {
+    "ID": "junior_mage",
+    "Name": "初级法师",
+    "IntMap": 5
+  },
+  "enemys_42": {
+    "ID": "gate_keeperC",
+    "Name": "初级卫兵",
+    "IntMap": 6
+  },
+  "items_0": {
+    "ID": "yellow_key",
+    "Name": "黄钥匙",
+    "IntMap": 201
+  },
+  "items_20": {
+    "ID": "red_potion",
+    "Name": "红血瓶",
+    "IntMap": 202
+  },
+  "items_21": {
+    "ID": "blue_potion",
+    "Name": "蓝血瓶",
+    "IntMap": 203
+  },
+  "items_16": {
+    "ID": "red_gem",
+    "Name": "红宝石",
+    "IntMap": 204
+  },
+  "items_17": {
+    "ID": "blue_gem",
+    "Name": "蓝宝石",
+    "IntMap": 205
+  },
+  "items_2": {
+    "ID": "red_key",
+    "Name": "红钥匙",
+    "IntMap": 206
+  },
+  "items_1": {
+    "ID": "blue_key",
+    "Name": "蓝钥匙",
+    "IntMap": 207
+  },
+  "animates_16": {
+    "ID": "yellow_door",
+    "Name": "黄门",
+    "IntMap": 1001
+  },
+  "animates_20": {
+    "ID": "blue_door",
+    "Name": "蓝门",
+    "IntMap": 1003
+  },
+  "animates_24": {
+    "ID": "red_door",
+    "Name": "红门",
+    "IntMap": 1002
+  },
+  "animates_36": {
+    "ID": "iron_door",
+    "Name": "铁门",
+    "IntMap": 1004
+  },
+  "animates_40": {
+    "ID": "yellow_wall",
+    "Name": "黄墙",
+    "IntMap": 1010
+  },
+  "terrains_6": {
+    "ID": "stair_up",
+    "Name": "楼梯(上)",
+    "IntMap": 2001
+  },
+  "terrains_5": {
+    "ID": "stair_down",
+    "Name": "楼梯(下)",
+    "IntMap": 2002
+  },
+  "terrains_0": {
+    "ID": "terrains_0",
+    "Name": "石头地板",
+    "IntMap": 10001
+  }
+}

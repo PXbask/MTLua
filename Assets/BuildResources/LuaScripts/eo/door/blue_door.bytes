@@ -1,0 +1,18 @@
+local Core = CS.MT.Util.LuaUtil
+local keyID = 207
+
+function beforeOpenDoor()
+    
+end
+
+function afterOpenDoor()
+    Core.Player.UseItem(keyID)
+end
+
+function getCanMove()
+    return Core.Player.HasItem(keyID)
+end
+
+function getEntityType()
+    return 1 << 4
+end
