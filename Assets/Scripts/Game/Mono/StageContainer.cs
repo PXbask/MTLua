@@ -180,6 +180,7 @@ namespace MT.Mono
                 if (target.Belong(Event.EventObjectType.Stair))
                 {
                     target.OnChangeFloor();
+                    this.map.DoChangeFloor(expect.expos);
                 }
                 if (target.Belong(Event.EventObjectType.Enemy))
                 {

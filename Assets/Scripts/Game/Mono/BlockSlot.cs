@@ -35,7 +35,7 @@ namespace MT.Mono
         {
             for (int i = 0; i < eventChildRoot.childCount; i++)
             {
-                Manager.Pool.UnSpawn("EventObject", this.eventlogic.assetName, eventChildRoot.GetChild(i));
+                Manager.Pool.UnSpawn("EventObject", this.eventlogic.assetName, eventChildRoot.GetChild(i).gameObject);
             }
             @object.transform.SetParent(eventChildRoot, false);
             this.Refresh();

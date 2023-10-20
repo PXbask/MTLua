@@ -12,6 +12,8 @@ namespace MT.Data
         public List<int> BackGroundLayer { get; set; }
         public List<int> EventGroundLayer { get; set; }
         public List<int> FrontGroundLayer { get; set; }
+        public TeleportData Up { get; set; }
+        public TeleportData Down { get; set; }
     }
 }
 

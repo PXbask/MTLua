@@ -1,0 +1,15 @@
+function beforeChangeFloor()
+    
+end
+
+function onChangeFloor()
+    
+end
+
+function getCanMove()
+    return true
+end
+
+function getEntityType()
+    return 1 << 1
+end

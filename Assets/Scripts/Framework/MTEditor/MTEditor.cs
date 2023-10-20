@@ -21,6 +21,9 @@ namespace MT.Editor
         private Tilemap bgmap;
         private Tilemap eventmap;
 
+        [SerializeField] private TeleportData upstair;
+        [SerializeField] private TeleportData downstair;
+
         private int m_level;
 
         private int Scale => Mathf.Max(exportRect.width, exportRect.height);
@@ -63,22 +66,27 @@ namespace MT.Editor
                     EventGroundLayer = { },
                     BackGroundLayer = { },
                     FrontGroundLayer = { },
+                    Up = TeleportData.Empty,
+                    Down = TeleportData.Empty,
                 };
             }
 
             int scale = stageData.Scale;
             TileBase[] tileBases = new TileBase[scale * scale];
+            this.upstair = stageData.Up;
+            this.downstair = stageData.Down;
+
             if (scale <= 0)
             {
-                bgmap.SetTilesBlock(this.Rect2BoundInt(new RectInt(0, 0, 0, 0)), new TileBase[] { });
-                eventmap.SetTilesBlock(this.Rect2BoundInt(new RectInt(0, 0, 0, 0)), new TileBase[] { });
+                this.exportRect = new RectInt(0, 0, 0, 0);
+                bgmap.ClearAllTiles();
+                eventmap.ClearAllTiles();
             }
             else
             {
                 for (int i = 0; i < stageData.BackGroundLayer.Count; i++)
                 {
                     int ix = i % scale + (scale - 1 - i / scale) * scale;
-                    //Debug.Log($"[i = {i}, ix = {ix}]");
                     tileBases[i] = this.tileMaping(stageData.BackGroundLayer[ix]);
                 }
                 this.exportRect = new RectInt(0, 0, scale, scale);
@@ -92,8 +100,6 @@ namespace MT.Editor
                 this.exportRect = new RectInt(0, 0, scale, scale);
                 eventmap.SetTilesBlock(this.Rect2BoundInt(this.exportRect), tileBases.ToArray());
             }
-
-            Managers.DataManager.Instance.Dispose();
         }
 
         public void ExportConfig()
@@ -126,11 +132,12 @@ namespace MT.Editor
                 Scale = scale,
                 BackGroundLayer = bgIndex.ToList(),
                 EventGroundLayer = eventIndex.ToList(),
-                FrontGroundLayer = foreIndex.ToList()
+                FrontGroundLayer = foreIndex.ToList(),
+                Up = this.upstair,
+                Down = this.downstair,
             });
 
             Managers.DataManager.Instance.ExportStageData();
-            Managers.DataManager.Instance.Dispose();
         }
 
         private int EventTileMaping(TileBase tileBase)
@@ -154,6 +161,11 @@ namespace MT.Editor
                 }
             }
             return null;
+        }
+
+        private void OnDestroy()
+        {
+            Managers.DataManager.Instance.Dispose();
         }
     }
 }

@@ -34,6 +34,7 @@ namespace MT.Model
         public MapLayout(StageData data)
         {
             this.StageData = data;
+            this.level = stageData.Level;
             var ints1 = data.BackGroundLayer;
             var ints2 = data.EventGroundLayer;
             var ints3 = data.FrontGroundLayer;
@@ -142,6 +143,26 @@ namespace MT.Model
             this.eventgroundLayer.Set(x, y, v);
             this.eventLayer.Set(x, y, neo);
             MT.Mono.StageContainer.instance.GetBlockSlot(x, y).ResetEventObject(neo.GetGameObject());
+        }
+
+        internal void DoChangeFloor(Vector2Int pos)
+        {
+            if(pos == this.stageData.Up.start)
+            {
+                //Upstair
+                int targetLevel = this.stageData.Up.level;
+                MTRuntime.instance.LoadLevel(targetLevel);
+                MTRuntime.instance.SetHeroPosition(this.stageData.Up.position);
+                return;
+            }
+            if(pos == this.stageData.Down.start)
+            {
+                //Downstair
+                int targetLevel = this.stageData.Down.level;
+                MTRuntime.instance.LoadLevel(targetLevel);
+                MTRuntime.instance.SetHeroPosition(this.stageData.Down.position);
+                return;
+            }
         }
     }
 }
